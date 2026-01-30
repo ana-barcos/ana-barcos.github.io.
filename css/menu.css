@@ -1,0 +1,656 @@
+li {
+  color: rgb(255, 255, 255);
+}
+
+.menu {
+  background-color: #6188de;
+  /* Fondo del menú */
+}
+
+/* Quitar puntos de la lista y márgenes */
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* Esto hace que sea horizontal */
+  justify-content: center;
+  /* Centra los botones */
+}
+
+.menu li {
+  margin: 15;
+}
+
+/* Estilos de los enlaces */
+.menu a {
+  display: block;
+  padding: 15px 25px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Efecto al pasar el mouse */
+.menu a:hover {
+  background-color: #250364;
+}
+
+.centrar {
+  display: block;
+  /* convierte la imagen en un bloque */
+  margin-left: auto;
+  /* margen automático izquierda */
+  margin-right: auto;
+  /* margen automático derecha */
+}
+
+.contenedor {
+  display: flex;
+  /* los pone uno al lado del otro */
+  align-items: center;
+  /* centra verticalmente */
+  justify-content: space-between;
+  /* separa texto e imagen */
+  gap: 20px;
+  /* espacio entre ambos */
+  padding: 20px;
+}
+
+.texto {
+  flex: 1;
+  /* el texto ocupa todo el espacio posible */
+}
+
+.imagen {
+  width: 250px;
+  /* tamaño de la imagen */
+  height: auto;
+}
+
+.texto {
+  font-size: 24px;
+  /* tamaño de letra */
+}
+
+p {
+  font-weight: normal;
+}
+
+.celeste {
+  color: #03698b;
+}
+
+.celeste {
+  color: #03698b !important;
+}
+
+.texto {
+  font-size: 24px;
+  /* tamaño de letra */
+}
+
+table {
+  border-collapse: collapse;
+  /* Elimina espacios entre bordes */
+  border-spacing: 0;
+  /* Elimina espacios entre celdas */
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  /* Ajusta padding para texto */
+  margin: 0;
+  /* Asegura que no haya margen */
+  border: 1px solid transparent;
+  /* Puedes poner borde transparente para evitar saltos */
+}
+
+th:not(:last-child),
+td:not(:last-child) {
+  border-right: 2px solid #0000cc;
+  /* Línea vertical separadora */
+}
+
+th {
+  background-color: #0000cc;
+  color: white;
+}
+
+td {
+  background-color: #cce0ff;
+}
+
+.formulario {
+  width: 50%;
+  margin: 40px auto;
+  background-color: #cce0ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
+}
+
+div .centrar {
+  /* Usamos !important para anular cualquier estilo flex o grid existente, si es necesario. */
+  /* Úsalo con precaución, solo si lo demás falla. */
+  display: block !important;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.contenedor {
+  /* Forzar al contenedor de texto a ocupar todo el ancho disponible */
+  width: 100%;
+  /* Opcional: Asegura que si había algún flotado, este elemento lo ignora */
+  clear: both;
+  /* Añade margen en la parte inferior para separarlo de las imágenes */
+  margin-bottom: 30px;
+}
+
+/* Además, asegúrate de que el div que contiene las imágenes no tenga flotado a la izquierda */
+.contenedor+div {
+  /* Selecciona el div inmediatamente después de .contenedor */
+  clear: both;
+  width: 100%;
+  /* Ocupa el ancho completo */
+}
+
+/* Centrar el h1 que está dentro del div con clase "texto" */
+.texto h1 {
+  text-align: center;
+}
+
+.centrar {
+  /* La clave para que se pongan una debajo de la otra */
+  display: block;
+
+  /* La clave para que se centren horizontalmente */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Espacio entre las imágenes apiladas */
+  margin-bottom: 20px;
+}
+
+/* Estilo para el contenedor de los recuadros */
+.aventuras-grid {
+  display: flex;
+  /* Habilita el diseño de cuadrícula */
+  justify-content: space-around;
+  /* Distribuye las tarjetas uniformemente */
+  gap: 20px;
+  /* Espacio entre las tarjetas */
+  margin-top: 30px;
+}
+
+/* Estilo general para cada recuadro (card) */
+.card {
+  width: 300px;
+  /* Define el ancho de cada tarjeta */
+  padding: 15px;
+  border: 3px solid;
+  /* Define el borde (recuadro) */
+  border-radius: 15px;
+  /* Bordes redondeados */
+  text-align: center;
+  /* Centra el contenido */
+  position: relative;
+  /* Esencial para el posicionamiento del título */
+  background-color: white;
+  /* Fondo blanco para las tarjetas */
+}
+
+.card-content img {
+  width: 100%;
+  height: 180px;
+  /* **Altura fija para la uniformidad** */
+  object-fit: cover;
+  /* **Ajuste para evitar la distorsión** */
+  border-radius: 10px 10px 0 0;
+  /* Aplicamos bordes redondeados solo arriba */
+}
+
+
+.card-content h2 {
+
+  background-color: lightgray;
+
+  color: white;
+  padding: 5px 20px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.adventures-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+}
+
+.titulo-gigante {
+  font-size: 3em;
+}
+
+.card-content h2 a {
+  color: black;
+  text-decoration: none;
+}
+
+.word-card h2 {
+  background-color: #5b9bd5;
+}
+
+.excel-card h2 {
+  background-color: #3cb371;
+}
+
+.powerpoint-card h2 {
+  background-color: #ff6347;
+}
+
+.edge-card h2 {
+  background-color: #ba61f6;
+}
+
+.juego-card h2 {
+  background-color: #27e5c9;
+}
+
+.tooltip {
+  position: relative;
+
+  display: inline-block;
+
+}
+
+.tooltip-box {
+  visibility: hidden;
+  /* Oculta el cuadro de mensaje por defecto */
+  opacity: 0;
+  /* Oculta con transición suave */
+  width: 200px;
+  background-color: #333;
+  /* Fondo del cuadro de mensaje */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+
+  /* Posicionamiento: flotalo sobre el título */
+  position: absolute;
+  z-index: 100;
+  /* Asegura que esté encima de todo */
+  bottom: 100%;
+  /* Coloca el cuadro encima del título */
+  left: 50%;
+  margin-left: -100px;
+  /* Centra el cuadro (la mitad de 200px) */
+
+  transition: opacity 0.3s;
+  /* Para una aparición suave */
+}
+
+/* 3. Estilo de la flecha (tu imagen) */
+.tooltip-box .arrow {
+  width: 20px;
+  /* Tamaño de tu flecha */
+  height: auto;
+  position: absolute;
+  top: 90%;
+  /* Coloca la flecha en la parte inferior del cuadro */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Centra la flecha */
+}
+
+/* 4. Mostrar el mensaje al pasar el ratón */
+.tooltip:hover .tooltip-box {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-wrapper {
+  position: relative;
+  /* Define este contenedor como el origen de las coordenadas */
+  display: inline-block;
+  /* Para que solo ocupe el ancho del contenido */
+  /* Posiciona este wrapper donde está tu título (puedes usar el CSS que movía el h2) */
+}
+
+/* Cuando el ratón está sobre el contenedor (.tooltip-wrapper) */
+.tooltip-wrapper:hover .tooltip-box {
+  visibility: visible;
+  opacity: 1;
+}
+
+.fondo-word {
+  background-color: #62bae6;
+}
+
+
+.fondo-excel {
+  background-color: #99f699;
+  /* Verde muy pálido, inspirado en Excel */
+}
+
+
+.fondo-powerpoint {
+  background-color: #f2c797;
+  /* Rosa/Melocotón muy pálido */
+}
+
+.fondo-home {
+  background-color: #fffffffa;
+  /* Blanco muy sutilmente grisáceo/cálido */
+}
+
+.fondo-edge {
+  background-color: #a48cdd;
+
+}
+
+.powerpoint-card {
+  width: 300px;
+  height: 300px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  position: relative;
+  overflow: visible;
+  /* Importante para que el banner se salga */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edge-card {
+  width: 300px;
+  height: 300px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  position: relative;
+  overflow: visible;
+  /* Importante para que el banner se salga */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.juego-card {
+  width: 300px;
+  height: 300px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  position: relative;
+  overflow: visible;
+  /* Importante para que el banner se salga */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+body {
+  background: #077195;
+  /* Fondo azul oscuro del quiz */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  /* QUITAMOS display: flex de aquí para no dañar el menú/contenido */
+  min-height: 100vh;
+  /* Esencial para centrar el wrapper verticalmente */
+}
+
+/* El contenedor que centra el logo y la tarjeta */
+.quiz-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* Apila el logo y el quiz */
+  justify-content: center;
+  /* Centrado vertical */
+  align-items: center;
+  /* Centrado horizontal */
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-quiz {
+  text-align: center;
+}
+
+h1 {
+  /* Si usas un h1 para el título principal de la página */
+  color: rgb(23, 22, 22);
+  margin-bottom: 30px;
+}
+.card-container2 {
+  perspective: 1000px;
+  /* Define la profundidad 3D */
+  width: 400px;
+  height: 400px;
+  /* Alto fijo para visibilidad */
+  margin: 50px auto;
+}
+
+/* El elemento que realmente voltea */
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  /* Animación de volteo */
+  transform-style: preserve-3d;
+  /* Esencial para el volteo */
+}
+
+/* Estilos de las caras (general) */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /* Oculta el reverso mientras está de frente */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+/* Cara Frontal (Pregunta) */
+.card-front {
+  background: #f9f7f7;
+  /* Fondo blanco/claro para visibilidad */
+  z-index: 2;
+  text-align: left;
+}
+
+.card-front h2 {
+  color: #1b1a1a;
+  /* Color oscuro para el texto de la pregunta */
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.instruccion {
+  font-size: 0.8em;
+  color: #888;
+  text-align: left;
+  /* Lo ponemos a la izquierda para seguir el flujo */
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+/* Cara Trasera (Respuesta) */
+.card-back {
+  background: #2db4ab;
+  /* Fondo verde para indicar éxito */
+  color: white;
+  transform: rotateY(180deg);
+  /* Coloca el reverso atrás */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-back h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+/* Lógica de Volteo: Activado por el checkbox oculto */
+#reveal-q1:checked~.flip-card {
+  transform: rotateY(180deg);
+  /* Voltea la tarjeta al seleccionar */
+}
+
+/* =================================================== */
+/* 3. ESTILOS DE BOTONES/OPCIONES                      */
+/* =================================================== */
+
+.opcion-btn {
+  display: block;
+  /* Ocupa el ancho completo, esencial para el formato de botón */
+  margin: 10px 0;
+  /* Espacio vertical entre botones */
+  padding: 12px;
+  border: 1px solid #ccc;
+  background: white;
+  /* Fondo blanco */
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s, transform 0.1s;
+  color: #333;
+  /* Color oscuro para el texto */
+  font-size: 1.1em;
+}
+
+.opcion-btn:hover {
+  background: #e9e9e9;
+  /* Efecto suave al pasar el mouse */
+}
+
+.opcion-btn:active {
+  transform: scale(0.98);
+  /* Efecto de "presionar" */
+}
+
+.next-btn {
+  display: inline-block;
+  background: #11676a;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 25px;
+}
+
+.quiz-carousel {
+  position: relative;
+  width: 400px;
+  /* Asegura que coincida con el ancho de .card-container2 */
+  height: 500px;
+  /* Asegura que coincida con el alto de .card-container2 */
+}
+
+
+.card-container2 {
+  /* Mantén tus estilos 3D, pero añade/verifica: */
+  width: 400px;
+  /* El ancho DEBE estar fijo aquí */
+  height: 500px;
+  /* El alto DEBE estar fijo aquí */
+
+  position: absolute;
+  /* Permite superponerse */
+  opacity: 0;
+  /* Oculta la tarjeta */
+  transition: opacity 0.5s ease;
+  /* Animación de cambio */
+  pointer-events: none;
+  /* Deshabilita clics en tarjetas ocultas */
+  top: 0;
+  left: 0;
+}
+
+/* 3. LÓGICA DE VISIBILIDAD: Mostrar solo la tarjeta seleccionada */
+/* Cuando el radio button de la Pregunta 1 está marcado, muestra su contenido */
+#q1-radio:checked~.quiz-carousel #q1-content {
+  opacity: 1;
+  pointer-events: all;
+  /* Habilita clics solo en la tarjeta visible */
+}
+
+/* Cuando el radio button de la Pregunta 2 está marcado, muestra su contenido */
+#q2-radio:checked~.quiz-carousel #q2-content {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* 4. Lógica de Volteo (DEBE ser única para cada pregunta) */
+#reveal-q1:checked~.flip-card {
+  transform: rotateY(180deg);
+}
+
+#reveal-q2:checked~.flip-card {
+  transform: rotateY(180deg);
+}
+#q3-radio:checked ~ .quiz-carousel #q3-content {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Muestra el contenido de la Q4 al marcar el radio button */
+#q4-radio:checked ~ .quiz-carousel #q4-content {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/* Lógica de Volteo (Flip-Card) */
+
+/* Volteo para la Pregunta 3 */
+#reveal-q3:checked ~ .flip-card { 
+    transform: rotateY(180deg);
+}
+
+/* Volteo para la Pregunta 4 */
+#reveal-q4:checked ~ .flip-card {
+    transform: rotateY(180deg);
+}
+.quiz-wrapper {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;     
+    justify-content: center; 
+    
+    
+    gap: 30px; 
+    
+    width: 80%;
+    min-height: 100vh;
+}
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contenido {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}

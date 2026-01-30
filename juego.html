@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Preguntas de Office</title>
+
+<!-- ================= CSS ================= -->
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Comic Sans MS', Arial;
+}
+
+body{
+    background:linear-gradient(180deg,#fff1f9,#e6f7ff);
+    text-align:center;
+}
+
+.quiz-container{
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
+}
+
+h2{
+    color:#ff3aa6;
+    text-shadow:2px 2px #ffd6ec;
+}
+
+h3{
+    color:#00a8cc;
+    margin:15px 0;
+}
+
+input{
+    padding:12px;
+    width:80%;
+    border-radius:20px;
+    border:2px solid #ff9ecb;
+    margin:10px;
+}
+
+.pregunta{
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    margin:25px 0;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.opcion-btn{
+    display:block;
+    margin:12px auto;
+    padding:12px;
+    width:80%;
+    border-radius:20px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    border:2px solid #ff9ecb;
+    background:#ffd6e8;
+}
+
+.opcion-btn:hover{
+    transform:scale(1.05);
+}
+
+.correcta{
+    background:#2bb673 !important;
+    color:white;
+}
+
+.incorrecta{
+    background:#ff7a7a !important;
+    color:white;
+}
+
+.next-btn{
+    padding:14px 28px;
+    background:#ff3aa6;
+    color:white;
+    border:none;
+    border-radius:25px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.next-btn:hover{
+    background:#00a8cc;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+<h2> Preguntas de Office</h2>
+
+<h3>Nombre</h3>
+<input type="text" id="nombre">
+
+<h3>Correo</h3>
+<input type="email" id="correo">
+
+<!-- PREGUNTA 1 -->
+<div class="pregunta">
+<h3>1) ¿Qué programa se usa para presentaciones?</h3>
+
+<button class="opcion-btn" onclick="responder(this,false,1)">Word</button>
+<button class="opcion-btn" onclick="responder(this,false,1)">Edge</button>
+<button class="opcion-btn" onclick="responder(this,true,1)">PowerPoint</button>
+<button class="opcion-btn" onclick="responder(this,false,1)">Excel</button>
+</div>
+
+<!-- PREGUNTA 2 -->
+<div class="pregunta">
+<h3>2) ¿Cuál se usa para escribir documentos?</h3>
+
+<button class="opcion-btn" onclick="responder(this,false,2)">Edge</button>
+<button class="opcion-btn" onclick="responder(this,false,2)">PowerPoint</button>
+<button class="opcion-btn" onclick="responder(this,false,2)">Excel</button>
+<button class="opcion-btn" onclick="responder(this,true,2)">Word</button>
+</div>
+
+<!-- PREGUNTA 3 -->
+<div class="pregunta">
+<h3>3) ¿Cuál sirve para cálculos?</h3>
+
+<button class="opcion-btn" onclick="responder(this,false,3)">PowerPoint</button>
+<button class="opcion-btn" onclick="responder(this,true,3)">Excel</button>
+<button class="opcion-btn" onclick="responder(this,false,3)">Word</button>
+<button class="opcion-btn" onclick="responder(this,false,3)">Edge</button>
+</div>
+
+<!-- PREGUNTA 4 -->
+<div class="pregunta">
+<h3>4) ¿Cuál es navegador web?</h3>
+
+<button class="opcion-btn" onclick="responder(this,true,4)">Edge</button>
+<button class="opcion-btn" onclick="responder(this,false,4)">Word</button>
+<button class="opcion-btn" onclick="responder(this,false,4)">PowerPoint</button>
+<button class="opcion-btn" onclick="responder(this,false,4)">Excel</button>
+</div>
+
+<button class="next-btn" onclick="mostrarResultado()">
+Ver Resultado
+</button>
+
+<br><br>
+
+<button class="next-btn" onclick="enviarResultado()">
+Enviar Resultado al Correo
+</button>
+
+<h3 id="resultado"></h3>
+
+</div>
+
+<!-- ================= EMAILJS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+
+let puntos=0;
+let errores=[];
+let respondidas=0;
+
+// INICIAR EMAILJS
+(function(){
+    emailjs.init("AOCPt7rMfV6vx9-iy");
+})();
+
+// RESPONDER
+function responder(btn,esCorrecta,num){
+
+    if(btn.classList.contains("correcta") || btn.classList.contains("correcta") || btn.classList.contains("incorrecta")) return;
+
+    respondidas++;
+
+    if(esCorrecta){
+        btn.classList.add("correcta");
+        puntos++;
+    }else{
+        btn.classList.add("incorrecta");
+        errores.push("Pregunta "+num);
+    }
+}
+
+// MOSTRAR RESULTADO
+function mostrarResultado(){
+
+    if(respondidas<4){
+        alert("Responde todas las preguntas");
+        return;
+    }
+
+    let nombre=document.getElementById("nombre").value;
+
+    let mensaje = puntos==4
+        ? "¡Excelente "+nombre+"! 4/4 🎉"
+        : nombre+" tu puntaje es "+puntos+"/4";
+
+    document.getElementById("resultado").innerText=mensaje;
+}
+
+// ENVIAR EMAIL
+function enviarResultado(){
+
+    let nombre=document.getElementById("nombre").value;
+    let correo=document.getElementById("correo").value;
+
+    if(nombre=="" || correo==""){
+        alert("Completa nombre y correo");
+        return;
+    }
+
+    if(respondidas<4){
+        alert("Responde todas las preguntas");
+        return;
+    }
+
+    let retro = errores.length==0
+        ? "¡Excelente! Todo correcto 🎉"
+        : "Debes repasar: "+errores.join(", ");
+
+    emailjs.send("service_n8rjy49","template_2omt9lc",{
+        to_email:correo,
+        alumno:nombre,
+        puntaje:puntos+"/4",
+        retroalimentacion:retro
+    })
+    .then(()=>{
+        alert("Resultados enviados a tu correo ✅");
+    });
+}
+
+</script>
+
+</body>
+</html>
